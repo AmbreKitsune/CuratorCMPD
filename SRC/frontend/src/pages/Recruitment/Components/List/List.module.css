@@ -1,0 +1,41 @@
+.List {
+    display: grid;
+    grid-template-rows: 50px 1fr;
+
+    border: 3px solid var(--Border);
+    border-radius: 10px;
+
+    background: var(--PanelBg);
+}
+
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    background: var(--PanelHeader);
+    border-bottom: 1px solid var(--Border);
+    border-radius: 10px 10px 0 0;
+
+    gap: 7px;
+}
+
+.Header span {
+    color: var(--Text);
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.Candidate {
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+
+    gap: 10px;
+}

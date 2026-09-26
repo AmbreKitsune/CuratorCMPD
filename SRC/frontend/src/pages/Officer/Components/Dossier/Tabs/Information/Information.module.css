@@ -1,0 +1,90 @@
+.Information {
+    width: 100%;
+
+    color: var(--Text);
+}
+
+.Identity,
+.Field,
+.Assignment {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    padding: 24px 18px;
+}
+
+.Identity {
+    border-bottom: 1px solid var(--Border);
+}
+
+.Identity svg,
+.Field svg,
+.Assignment svg {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 auto;
+
+    color: var(--Accent);
+    stroke-width: 1.8;
+}
+
+.ValueGroup {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.Label {
+    color: var(--MutedText);
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.PrimaryValue {
+    color: var(--Text);
+
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.Value {
+    color: var(--Text);
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.Muted {
+    color: var(--MutedText);
+}
+
+.Grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    border-bottom: 1px solid var(--Border);
+}
+
+.Field + .Field {
+    border-left: 1px solid var(--Border);
+}
+
+.Assignment {
+    border-bottom: 1px solid var(--Border);
+}
+
+@media (max-width: 900px) {
+    .Grid {
+        grid-template-columns: 1fr;
+    }
+
+    .Field + .Field {
+        border-top: 1px solid var(--Border);
+        border-left: 0;
+    }
+}

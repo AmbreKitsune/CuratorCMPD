@@ -1,0 +1,11 @@
+export const SHIFT_PHASE = {
+    RESTING: "RESTING",
+    AVAILABLE: "AVAILABLE",
+    ACTIVE: "ACTIVE",
+    SIGNED_OFF: "SIGNED_OFF"
+};
+
+export const SHIFT_TYPE =  {
+    DAY: "DAY",
+    NIGHT: "NIGHT",
+};

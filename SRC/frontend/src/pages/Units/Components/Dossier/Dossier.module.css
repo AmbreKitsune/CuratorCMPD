@@ -1,0 +1,289 @@
+.Dossier {
+    min-height: 0;
+
+    border: 3px solid var(--Border);
+    border-radius: 10px;
+    overflow: hidden;
+
+    background: var(--PanelBg);
+}
+
+.Content {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px;
+}
+
+.Empty {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    color: var(--MutedText);
+}
+
+.Empty svg {
+    width: 54px;
+    height: 54px;
+
+    margin-bottom: 8px;
+
+    color: var(--Accent);
+    stroke-width: 1.5;
+}
+
+.Empty span {
+    color: var(--Text);
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.Empty small {
+    font-size: 14px;
+}
+
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 12px 14px;
+    border-bottom: 2px solid var(--Border);
+}
+
+.HeaderInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--Text);
+
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.HeaderInfo svg {
+    width: 32px;
+    height: 32px;
+
+    color: var(--Accent);
+}
+
+.Code {
+    padding: 7px 12px;
+
+    color: var(--Accent);
+    background: var(--CardBg);
+
+    border: 1px solid var(--Border);
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.Identity {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    padding: 26px 18px;
+    border-bottom: 1px solid var(--Border);
+}
+
+.Eyebrow,
+.Label {
+    color: var(--MutedText);
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.UnitName {
+    color: var(--Text);
+
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.Stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    border-bottom: 1px solid var(--Border);
+}
+
+.Stat {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 22px 18px;
+}
+
+.Stat + .Stat {
+    border-left: 1px solid var(--Border);
+}
+
+.Stat > svg {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 auto;
+
+    color: var(--Accent);
+    stroke-width: 1.8;
+}
+
+.Stat > div {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.Value {
+    overflow: hidden;
+
+    color: var(--Text);
+
+    font-size: 18px;
+    font-weight: 700;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.Roster {
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 22px;
+}
+
+.RosterHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 18px 14px;
+    border-bottom: 1px solid var(--Border);
+}
+
+.RosterHeader > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--Text);
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.RosterHeader svg {
+    width: 22px;
+    height: 22px;
+
+    color: var(--Accent);
+}
+
+.Counter {
+    color: var(--MutedText);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.OfficerList {
+    display: flex;
+    flex-direction: column;
+}
+
+.Officer {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--Border);
+}
+
+.OfficerIcon {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--Accent);
+    background: var(--CardBg);
+
+    border-radius: 50%;
+}
+
+.OfficerIcon svg {
+    width: 23px;
+    height: 23px;
+}
+
+.OfficerInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.OfficerName {
+    color: var(--Text);
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.OfficerNumber {
+    color: var(--MutedText);
+
+    font-size: 13px;
+}
+
+.RosterEmpty {
+    padding: 34px 18px;
+
+    color: var(--MutedText);
+
+    text-align: center;
+    font-size: 15px;
+}
+
+@media (max-width: 1100px) {
+    .Stats {
+        grid-template-columns: 1fr;
+    }
+
+    .Stat + .Stat {
+        border-top: 1px solid var(--Border);
+        border-left: 0;
+    }
+}
