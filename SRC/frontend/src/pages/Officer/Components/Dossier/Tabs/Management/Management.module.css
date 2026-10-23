@@ -1,154 +1,154 @@
 .Management {
-    width: 100%;
+  width: 100%;
 
-    color: var(--Text);
+  color: var(--Text);
 }
 
 .Header,
 .Current {
-    display: flex;
-    align-items: center;
-    gap: 22px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
 
-    padding: 24px 18px;
-    border-bottom: 1px solid var(--Border);
+  padding: 24px 18px;
+  border-bottom: 1px solid var(--Border);
 }
 
 .Header svg,
 .Current svg {
-    width: 36px;
-    height: 36px;
-    flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
 
-    color: var(--Accent);
-    stroke-width: 1.8;
+  color: var(--Accent);
+  stroke-width: 1.8;
 }
 
 .Header > div,
 .ValueGroup {
-    min-width: 0;
+  min-width: 0;
 
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .Title {
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 1px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .Description,
 .Label {
-    color: var(--MutedText);
+  color: var(--MutedText);
 }
 
 .Description {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .Label {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1.2px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
 }
 
 .Value {
-    font-size: 20px;
-    font-weight: 700;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .Control {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 
-    padding: 24px 18px;
+  padding: 24px 18px;
 }
 
 .ActionRow {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 190px;
-    gap: 12px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  gap: 12px;
 }
 
 .Select {
-    width: 100%;
-    min-height: 48px;
+  width: 100%;
+  min-height: 48px;
 
-    padding: 0 14px;
+  padding: 0 14px;
 
-    color: var(--Text);
-    background: var(--PanelBg);
+  color: var(--Text);
+  background: var(--PanelBg);
 
-    border: 2px solid var(--Border);
-    border-radius: 8px;
+  border: 2px solid var(--Border);
+  border-radius: 8px;
 
-    font-size: 15px;
-    outline: none;
+  font-size: 15px;
+  outline: none;
 }
 
 .Select:focus {
-    border-color: var(--Accent);
+  border-color: var(--Accent);
 }
 
 .AssignButton,
 .UnassignButton {
-    min-height: 48px;
+  min-height: 48px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
 
-    padding: 0 18px;
+  padding: 0 18px;
 
-    border: 0;
-    border-radius: 8px;
+  border: 0;
+  border-radius: 8px;
 
-    font-size: 15px;
-    font-weight: 700;
+  font-size: 15px;
+  font-weight: 700;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .AssignButton {
-    color: var(--Text);
-    background: var(--Accent);
+  color: var(--Text);
+  background: var(--Accent);
 }
 
 .UnassignButton {
-    width: fit-content;
+  width: fit-content;
 
-    color: #8e3535;
-    background: #e4b5b5;
+  color: #8e3535;
+  background: #e4b5b5;
 }
 
 .AssignButton svg,
 .UnassignButton svg {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .AssignButton:disabled {
-    opacity: 0.45;
-    cursor: not-allowed;
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 .Error {
-    color: #a84343;
+  color: #a84343;
 
-    font-size: 14px;
-    font-weight: 600;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 @media (max-width: 900px) {
-    .ActionRow {
-        grid-template-columns: 1fr;
-    }
+  .ActionRow {
+    grid-template-columns: 1fr;
+  }
 
-    .UnassignButton {
-        width: 100%;
-    }
+  .UnassignButton {
+    width: 100%;
+  }
 }

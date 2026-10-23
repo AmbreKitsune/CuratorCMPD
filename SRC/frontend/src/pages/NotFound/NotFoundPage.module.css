@@ -1,31 +1,31 @@
 .Main {
-    width: 100%;
-    height: 100vh;
+  width: 100%;
+  height: 100vh;
 }
 
 .Title {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .Title h1 {
-    color: #4f4f4f;
-    font-size: 100px;
-    font-weight: bold;
+  color: #4f4f4f;
+  font-size: 100px;
+  font-weight: bold;
 
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .Title span {
-    color: #000;
-    font-size: 30px;
+  color: #000;
+  font-size: 30px;
 
-    text-transform: uppercase;
-    letter-spacing: 5px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
 }

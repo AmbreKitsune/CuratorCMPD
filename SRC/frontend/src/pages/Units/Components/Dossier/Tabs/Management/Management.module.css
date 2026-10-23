@@ -1,0 +1,180 @@
+.Management {
+  color: var(--Text);
+  width: 100%;
+}
+
+.SectionHeading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 19px 18px 26px;
+  border-bottom: 1px solid var(--Border);
+}
+
+.SectionHeading > svg {
+  width: 40px;
+  height: 40px;
+  color: var(--Accent);
+  stroke-width: 1.7;
+}
+
+.Eyebrow,
+.Label {
+  display: block;
+  color: var(--MutedText);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+}
+
+.Title {
+  margin: 5px 0 0;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.Overview {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 18px;
+  border-bottom: 1px solid var(--Border);
+}
+
+.StatusBlock {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  gap: 10px;
+}
+
+.Value {
+  font-size: 19px;
+  overflow-wrap: anywhere;
+}
+
+.Arrow {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  color: var(--Accent);
+}
+
+.Orders {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 25px 18px;
+}
+
+.Order {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  padding: 19px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--Border);
+  background: var(--CardBg);
+  color: var(--Text);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.Order:hover:not(:disabled) {
+  background: var(--CardHover);
+  border-color: var(--Accent);
+}
+
+.Order:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+
+.OrderIcon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--PanelBg);
+  color: var(--Accent);
+}
+
+.OrderIcon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.OrderCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.OrderCopy strong {
+  font-size: 15px;
+}
+
+.OrderCopy small {
+  color: var(--MutedText);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.OrderArrow {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  margin-left: auto;
+  color: var(--MutedText);
+}
+
+.Notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 0 18px;
+  padding: 16px;
+  border: 1px solid var(--Border);
+  border-radius: 8px;
+  background: var(--CardBg);
+  color: var(--MutedText);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.Notice svg {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+  color: var(--Accent);
+}
+
+.Error {
+  margin: 15px 18px;
+  color: #c75b60;
+  font-size: 13px;
+}
+
+@media (max-width: 1050px) {
+  .Orders {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .Overview {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .Arrow {
+    transform: rotate(90deg);
+  }
+}

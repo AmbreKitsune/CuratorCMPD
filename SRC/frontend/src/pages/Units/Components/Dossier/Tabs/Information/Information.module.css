@@ -1,0 +1,253 @@
+.Information {
+  width: 100%;
+  color: var(--Text);
+}
+
+.Identity,
+.Field {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 24px 18px;
+}
+
+.Identity {
+  border-bottom: 1px solid var(--Border);
+}
+
+.Identity > svg,
+.Field > svg {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  color: var(--Accent);
+  stroke-width: 1.8;
+}
+
+.ValueGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.Label {
+  color: var(--MutedText);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.PrimaryValue {
+  font-size: 26px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.Value {
+  font-size: 19px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.Grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-bottom: 1px solid var(--Border);
+}
+
+.Field + .Field {
+  border-left: 1px solid var(--Border);
+}
+
+.Roster {
+  padding-top: 18px;
+}
+
+.RosterHeader,
+.RosterTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.RosterHeader {
+  justify-content: space-between;
+  padding: 8px 18px 15px;
+  border-bottom: 1px solid var(--Border);
+}
+
+.RosterTitle {
+  color: var(--Text);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+.RosterTitle svg {
+  color: var(--Accent);
+  width: 22px;
+  height: 22px;
+}
+
+.Counter {
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--CardBg);
+  color: var(--MutedText);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.List {
+  display: flex;
+  flex-direction: column;
+}
+
+.Officer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--Border);
+}
+
+.Person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.Avatar {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--CardBg);
+  color: var(--Accent);
+}
+
+.Avatar svg {
+  width: 22px;
+  height: 22px;
+}
+
+.PersonName {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+.PersonMeta {
+  font-size: 12px;
+  color: var(--MutedText);
+}
+
+.Remove,
+.Cancel,
+.Confirm {
+  border: 1px solid var(--Border);
+  background: var(--CardBg);
+  color: var(--MutedText);
+  border-radius: 7px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.Remove {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+}
+
+.Remove svg {
+  width: 19px;
+  height: 19px;
+}
+
+.Remove:hover:not(:disabled) {
+  color: #c75b60;
+  background: var(--CardHover);
+}
+
+.Remove:disabled,
+.Cancel:disabled,
+.Confirm:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.Actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.Cancel,
+.Confirm {
+  padding: 9px 11px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.Cancel:hover:not(:disabled) {
+  background: var(--CardHover);
+}
+
+.Confirm {
+  color: #c75b60;
+  border-color: #c75b6059;
+}
+
+.Confirm:hover:not(:disabled) {
+  background: #c75b6018;
+}
+
+.Error {
+  padding: 12px 18px;
+  color: #c75b60;
+  font-size: 13px;
+}
+
+.Empty {
+  padding: 30px 18px;
+  text-align: center;
+  color: var(--MutedText);
+}
+
+.Hint {
+  padding: 14px 18px;
+  margin: 0;
+  color: var(--MutedText);
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .Grid {
+    grid-template-columns: 1fr;
+  }
+  .Field + .Field {
+    border-left: 0;
+    border-top: 1px solid var(--Border);
+  }
+}
+
+@media (max-width: 650px) {
+  .Officer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .Actions,
+  .Remove {
+    align-self: flex-end;
+  }
+}

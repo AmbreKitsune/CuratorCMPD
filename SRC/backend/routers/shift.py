@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 
-from database.session import get_db
+from database.session import get_db, AsyncSession
 from database.repository.shift import ShiftRepository
 from database.repository.player import PlayerRepository
 
@@ -13,7 +13,7 @@ router = APIRouter(prefix="/api/shift", tags=["shift"])
 
 
 @router.get("/")
-async def get_shift(db=Depends(get_db)):
+async def get_shift(db: AsyncSession = Depends(get_db)):
     cursor_shift = ShiftRepository(db)
     cursor_player = PlayerRepository(db)
 
@@ -21,7 +21,9 @@ async def get_shift(db=Depends(get_db)):
     if global_player_id is None:
         return
 
-    player_shift_state = await cursor_shift.get_player_shift_state_by_id(player_id=global_player_id)
+    player_shift_state = await cursor_shift.get_player_shift_state_by_id(
+        player_id=global_player_id
+    )
 
     if player_shift_state is None:
         return
@@ -36,7 +38,7 @@ async def get_shift(db=Depends(get_db)):
 
 
 @router.post("/start")
-async def start_shift(db=Depends(get_db)):
+async def start_shift(db: AsyncSession = Depends(get_db)):
     cursor_shift = ShiftRepository(db)
     cursor_player = PlayerRepository(db)
 
@@ -44,11 +46,10 @@ async def start_shift(db=Depends(get_db)):
     if global_player_id is None:
         return
 
-    await cursor_shift.update_phase_for_player_shift_state(player_id=global_player_id, shift_phase=ShiftPhase.ACTIVE)
+    await cursor_shift.update_phase_for_player_shift_state(
+        player_id=global_player_id, shift_phase=ShiftPhase.ACTIVE
+    )
 
-    await broadcast({
-       "type": "shift_update",
-       "data": {
-           "shift_phase": ShiftPhase.ACTIVE
-        }
-    })
+    await broadcast(
+        {"type": "shift_update", "data": {"shift_phase": ShiftPhase.ACTIVE}}
+    )

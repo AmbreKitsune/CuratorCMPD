@@ -1,17 +1,29 @@
-.header {
-    width: 100%;
+.Header {
+  width: 100%;
 
-    padding-left: 10px;
+  padding-left: 10px;
 
-    display: flex;
-    justify-content: start;
-    align-items: center;
+  display: flex;
 
-    border-bottom: 1px #000 solid;
+  justify-content: start;
+  align-items: center;
+
+  border-bottom: 1px #000 solid;
 }
 
-.headerTitle {
-    font-size: 20px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+.Container {
+  display: flex;
+  flex-direction: column;
+}
+
+.HeaderTitle {
+  font-size: 30px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.HeaderDescription {
+  color: #777;
+  font-size: 16px;
+  letter-spacing: 3px;
 }

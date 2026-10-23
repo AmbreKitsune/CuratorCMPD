@@ -9,23 +9,18 @@ class CandidateRepository:
 
     async def delete_all_candidates(self):
         await self.db.execute(delete(Candidate))
-        await self.db.commit()
 
     async def delete_candidate(self, candidate_id: int):
-        await self.db.execute(
-            delete(Candidate).where(Candidate.id == candidate_id)
-        )
+        await self.db.execute(delete(Candidate).where(Candidate.id == candidate_id))
 
-    async def create_candidate(self, first_name: str, last_name: str, age: int, experience: int):
+    async def create_candidate(
+        self, first_name: str, last_name: str, age: int, experience: int
+    ):
         candidate = Candidate(
-            first_name=first_name,
-            last_name=last_name,
-            age=age,
-            experience=experience
+            first_name=first_name, last_name=last_name, age=age, experience=experience
         )
         self.db.add(candidate)
-        await self.db.commit()
-        await self.db.refresh(candidate)
+        await self.db.flush()
 
     async def get_all_candidates(self):
         res = await self.db.execute(select(Candidate))

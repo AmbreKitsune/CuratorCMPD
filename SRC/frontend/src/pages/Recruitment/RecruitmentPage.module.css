@@ -1,33 +1,34 @@
 .Main {
-    --Bg: #cfd4da;
+  --Bg: #cfd4da;
 
-    --PanelBg: #dce2e7;
-    --PanelHeader: #d4dbe1;
+  --PanelBg: #dce2e7;
+  --PanelHeader: #d4dbe1;
 
-    --CardBg: #e5ebf0;
-    --CardHover: #d9e4ed;
-    --CardActive: #c9ddec;
+  --CardBg: #e5ebf0;
+  --CardHover: #d9e4ed;
+  --CardActive: #c9ddec;
 
-    --Border: #aeb8c2;
+  --Border: #aeb8c2;
 
-    --Accent: #3d7eae;
+  --Accent: #3d7eae;
 
-    --Text: #1c2732;
-    --MutedText: #65717d;
+  --Text: #1c2732;
+  --MutedText: #65717d;
 
-    width: 100%;
-    min-height: 100vh;
+  width: 100%;
+  height: 100vh;
+  min-height: 0;
 
-    display: grid;
-    grid-template-rows: 90px minmax(0, 1fr);
+  display: grid;
+  grid-template-rows: 90px minmax(0, 1fr);
 }
 
 .Container {
-    min-height: 0;
+  min-height: 0;
 
-    display: grid;
-    grid-template-columns: 420px minmax(0, 1fr);
+  display: grid;
+  grid-template-columns: 420px minmax(0, 1fr);
 
-    gap: 30px;
-    padding: 34px;
+  gap: 30px;
+  padding: 34px;
 }

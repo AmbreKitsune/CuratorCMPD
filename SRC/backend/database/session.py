@@ -25,6 +25,6 @@ AsyncSessionLocal = async_sessionmaker(
 )
 
 
-async def get_db() -> AsyncSession: # type: ignore
+async def get_db() -> AsyncSession:  # type: ignore
     async with AsyncSessionLocal() as session:
-        yield session # type: ignore
+        yield session  # type: ignore

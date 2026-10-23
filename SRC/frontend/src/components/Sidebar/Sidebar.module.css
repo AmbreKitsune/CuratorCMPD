@@ -1,434 +1,431 @@
 .Sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
 
-    width: var(--SidebarWidth);
-    height: 100vh;
+  width: var(--SidebarWidth);
+  height: 100vh;
 
-    display: grid;
-    grid-template-rows: 90px 200px 1fr 90px;
+  display: grid;
+  grid-template-rows: 90px 200px 1fr 90px;
 
-    background: #111827;
-    border-right: 1px solid #1f2937;
+  background: #111827;
+  border-right: 1px solid #1f2937;
 
-    color: #e5e7eb;
+  color: #e5e7eb;
 }
 
 /* LOGO */
 
 .Logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 
-    padding-left: 14px;
+  padding-left: 14px;
 
-    border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
 }
 
 .LogoIco {
-    width: 58px;
-    height: 58px;
+  width: 58px;
+  height: 58px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    color: #f8fafc;
+  color: #f8fafc;
 
-    background: rgba(59, 130, 246, 0.14);
-    border: 1px solid rgba(96, 165, 250, 0.28);
-    border-radius: 14px;
+  background: rgba(59, 130, 246, 0.14);
+  border: 1px solid rgba(96, 165, 250, 0.28);
+  border-radius: 14px;
 }
 
 .LogoText {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .LogoTextName {
-    position: relative;
+  position: relative;
 
-    color: #f8fafc;
-    font-size: 21px;
-    font-weight: 700;
-    letter-spacing: 0.2px;
+  color: #f8fafc;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
 }
 
 .LogoTextName::after {
-    content: "";
-    position: absolute;
+  content: "";
+  position: absolute;
 
-    left: 0;
-    bottom: 0px;
+  left: 0;
+  bottom: 0px;
 
-    width: 100%;
-    height: 3px;
+  width: 100%;
+  height: 3px;
 
-    background: linear-gradient(
-        90deg,
-        #2563eb,
-        #38bdf8,
-        #f8fafc
-    );
+  background: linear-gradient(90deg, #2563eb, #38bdf8, #f8fafc);
 
-    border-radius: 999px;
+  border-radius: 999px;
 }
 
 .LogoTextDesc {
-    color: #94a3b8;
-    font-size: 10px;
-    letter-spacing: 0.9px;
-    text-transform: uppercase;
+  color: #94a3b8;
+  font-size: 10px;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
 }
 
 .LogoVersion {
-    color: #cbd5e1;
-    font-weight: 600;
+  color: #cbd5e1;
+  font-weight: 600;
 }
 
 /* SHIFT */
 
 .Shift {
-    margin: 14px;
+  margin: 14px;
 
-    display: grid;
-    grid-template-rows: 30px 1fr 30px;
+  display: grid;
+  grid-template-rows: 30px 1fr 30px;
 
-    background: #151f31;
-    border: 1px solid #243044;
-    border-radius: 12px;
+  background: #151f31;
+  border: 1px solid #243044;
+  border-radius: 12px;
 }
 
 .ShiftTitle {
-    width: 100%;
-    height: 30px;
+  width: 100%;
+  height: 30px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    border-bottom: 1px solid #243044;
+  border-bottom: 1px solid #243044;
 
-    font-size: 18px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .ShiftInfo {
-    display: grid;
+  display: grid;
 
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-        "Phase Phase"
-        "TypeTitle TimeTitle"
-        "TypeValue TimeValue";
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "Phase Phase"
+    "TypeTitle TimeTitle"
+    "TypeValue TimeValue";
 }
 
 .ShiftPhase {
-    grid-area: Phase;
-    width: 100%;
+  grid-area: Phase;
+  width: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
 
-    border-bottom: 1px solid #243044;
+  border-bottom: 1px solid #243044;
 }
 
 .ShiftTypeTitle {
-    grid-area: TypeTitle;
+  grid-area: TypeTitle;
 }
 
 .ShiftTimeTitle {
-    grid-area: TimeTitle;
+  grid-area: TimeTitle;
 }
 
 .ShiftTypeValue {
-    grid-area: TypeValue;  
+  grid-area: TypeValue;
 }
 
 .ShiftTimeValue {
-    grid-area: TimeValue;
+  grid-area: TimeValue;
 }
 
-.ShiftTypeTitle, .ShiftTimeTitle, 
-.ShiftTypeValue, .ShiftTimeValue {
-    width: 100%;
-    height: 100%;
+.ShiftTypeTitle,
+.ShiftTimeTitle,
+.ShiftTypeValue,
+.ShiftTimeValue {
+  width: 100%;
+  height: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    border: 1px solid rgba(36, 48, 68, 0.65);
+  border: 1px solid rgba(36, 48, 68, 0.65);
 
-    font-size: 15px;
+  font-size: 15px;
 }
 
-.ShiftPhase, .ShiftTypeValue, .ShiftTimeValue {
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.ShiftPhase,
+.ShiftTypeValue,
+.ShiftTimeValue {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .ShiftButton {
-    padding: 8px 10px;
+  padding: 8px 10px;
 
-    color: #e5e7eb;
-    background: #1f2937;
+  color: #e5e7eb;
+  background: #1f2937;
 
-    border: 1px solid #374151;
-    border-radius: 0 0 10px 10px;
+  border: 1px solid #374151;
+  border-radius: 0 0 10px 10px;
 
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition:
-        background-color 0.15s ease,
-        border-color 0.15s ease,
-        color 0.15s ease,
-        transform 0.1s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.1s ease;
 }
 
 .ShiftButton:not(:disabled):hover {
-    background: #263244;
-    border-color: #475569;
+  background: #263244;
+  border-color: #475569;
 }
 
 .ShiftButton:disabled {
-    color: #64748b;
-    background: #182235;
-    border-color: #243044;
+  color: #64748b;
+  background: #182235;
+  border-color: #243044;
 
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 
-
 .Day {
-    color: #FDE68A;
-    text-shadow: 0 0 8px rgba(253, 230, 138, 0.16);
+  color: #fde68a;
+  text-shadow: 0 0 8px rgba(253, 230, 138, 0.16);
 }
 
 .Night {
-    color: #a5b4fc;
-    text-shadow: 0 0 8px rgba(165, 180, 252, 0.18);
+  color: #a5b4fc;
+  text-shadow: 0 0 8px rgba(165, 180, 252, 0.18);
 }
 
-
 .PhaseResting {
-    color: #94a3b8;
+  color: #94a3b8;
 }
 
 .PhaseAvailable {
-    color: #ffd8a8;
+  color: #ffd8a8;
 }
 
 .PhaseActive {
-    color: #8ce99a;
+  color: #8ce99a;
 }
 
 .PhaseSignedOff {
-    color: #af6363;
+  color: #af6363;
 }
 
 /* NAV */
 
 .Nav {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    padding: 8px 10px 18px;
+  padding: 8px 10px 18px;
 
-    overflow-y: auto;
-    overflow-x: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 
-    border-top: 1px solid rgba(148, 163, 184, 0.14);
-    border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
 }
 
 .Nav::-webkit-scrollbar {
-    width: 4px;
+  width: 4px;
 }
 
 .Nav::-webkit-scrollbar-thumb {
-    background: rgba(148, 163, 184, 0.25);
-    border-radius: 999px;
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 999px;
 }
 
 /* CATEGORY */
 
 .Category {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
 }
 
 .HeaderTabs {
-    height: 34px;
+  height: 34px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    padding: 0 10px;
+  padding: 0 10px;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    color: #94a3b8;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .HeaderTabs svg {
-    color: #64748b;
-    transition: 0.18s ease;
+  color: #64748b;
+  transition: 0.18s ease;
 }
 
 .Rotate {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* TABS */
 
 .Tabs {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .Tab {
-    min-height: 42px;
+  min-height: 42px;
 
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
-    padding: 0 14px;
+  padding: 0 14px;
 
-    color: #cbd5e1;
-    text-decoration: none;
+  color: #cbd5e1;
+  text-decoration: none;
 
-    border-radius: 10px;
-    position: relative;
+  border-radius: 10px;
+  position: relative;
 
-    transition: 0.15s ease;
+  transition: 0.15s ease;
 }
 
 .Tab:hover {
-    background: #182235;
-    color: #f8fafc;
+  background: #182235;
+  color: #f8fafc;
 }
 
 .Active {
-    background: #1f2937;
-    color: #ffffff;
+  background: #1f2937;
+  color: #ffffff;
 }
 
 .Active::before {
-    content: "";
-    position: absolute;
+  content: "";
+  position: absolute;
 
-    left: 0;
-    top: 8px;
-    bottom: 8px;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
 
-    width: 3px;
-    background: #64748b;
+  width: 3px;
+  background: #64748b;
 
-    border-radius: 999px;
+  border-radius: 999px;
 }
 
 .TabIcon {
-    width: 34px;
-    height: 34px;
+  width: 34px;
+  height: 34px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    border-radius: 10px;
+  border-radius: 10px;
 
-    color: #93c5fd;
+  color: #93c5fd;
 }
 
 .Active .TabIcon {
-    color: #dbeafe;
+  color: #dbeafe;
 }
 
 .TabTitle {
-    flex: 1;
-    font-size: 14px;
-    font-weight: 600;
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .Badge {
-    min-width: 20px;
-    height: 20px;
+  min-width: 20px;
+  height: 20px;
 
-    padding: 0 6px;
+  padding: 0 6px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    color: #ffffff;
-    background: #0284c7;
+  color: #ffffff;
+  background: #0284c7;
 
-    border-radius: 999px;
+  border-radius: 999px;
 
-    font-size: 11px;
-    font-weight: 800;
+  font-size: 11px;
+  font-weight: 800;
 }
 
 /* PROFILE (DON'T UPDATE) */
 
 .profile {
-    margin: 10px 14px;
+  margin: 10px 14px;
 
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
-    color: #e5e7eb;
+  color: #e5e7eb;
 }
 
 .profileAvatar {
-    width: 38px;
-    height: 38px;
+  width: 38px;
+  height: 38px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    background: rgba(59, 130, 246, 0.18);
-    border-radius: 13px;
+  background: rgba(59, 130, 246, 0.18);
+  border-radius: 13px;
 
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .profileInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .profileName {
-    color: #f8fafc;
-    font-size: 13px;
-    font-weight: 700;
+  color: #f8fafc;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .profileRole {
-    color: #94a3b8;
-    font-size: 11px;
+  color: #94a3b8;
+  font-size: 11px;
 }

@@ -1,0 +1,75 @@
+.Biography {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+  width: 100%;
+}
+
+.Section {
+  min-width: 0;
+  padding: 16px;
+  background: #eaf0f5;
+  border: 1px solid #b7c9d9;
+  border-radius: 10px;
+}
+
+.Title {
+  margin: 0 0 12px;
+  padding-bottom: 10px;
+  color: var(--Text);
+  border-bottom: 1px solid var(--Border);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.Details {
+  margin: 0;
+}
+
+.Row {
+  display: grid;
+  grid-template-columns: minmax(100px, 38%) minmax(0, 1fr);
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--Border);
+}
+
+.Row:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.Row:first-child {
+  padding-top: 0;
+}
+
+.Row dt {
+  color: var(--MutedText);
+}
+
+.Row dd {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--Text);
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .Biography {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .Section {
+    padding: 14px;
+  }
+
+  .Row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+}

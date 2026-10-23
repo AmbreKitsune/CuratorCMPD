@@ -1,10 +1,9 @@
-import asyncio
 import random
 
 from routers.ws import broadcast
 
-from database.repository.candidates import CandidateRepository
 from database.session import AsyncSessionLocal
+from database.repository.candidates import CandidateRepository
 
 
 CONFIG = {
@@ -38,7 +37,7 @@ CONFIG = {
         "Нурлан",
         "Алихан",
         "Дамир",
-        "Арсен"
+        "Арсен",
     ],
     "last_name": [
         "Лисицын",
@@ -70,8 +69,8 @@ CONFIG = {
         "Ермаков",
         "Романов",
         "Ахметов",
-        "Садыков"
-    ]
+        "Садыков",
+    ],
 }
 
 
@@ -79,18 +78,20 @@ async def create_candidates():
     async with AsyncSessionLocal() as db:
         cursor_candidate = CandidateRepository(db)
 
-        await cursor_candidate.delete_all_candidates()
+        try:
+            await cursor_candidate.delete_all_candidates()
 
-        for _ in range(5):
-            first_name = random.choice(CONFIG["first_name"])
-            last_name = random.choice(CONFIG["last_name"])
-            age = random.randint(20, 45)
+            for _ in range(5):
+                first_name = random.choice(CONFIG["first_name"])
+                last_name = random.choice(CONFIG["last_name"])
+                age = random.randint(20, 45)
 
-            await cursor_candidate.create_candidate(
-                first_name=first_name,
-                last_name=last_name,
-                age=age,
-                experience=0
-            )
+                await cursor_candidate.create_candidate(
+                    first_name=first_name, last_name=last_name, age=age, experience=0
+                )
 
-        await broadcast({"type": "candidates_update"})
+            await db.commit()
+            await broadcast({"type": "candidates_update"})
+        except Exception:
+            await db.rollback()
+            raise

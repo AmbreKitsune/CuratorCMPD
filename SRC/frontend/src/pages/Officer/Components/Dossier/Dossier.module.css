@@ -1,158 +1,156 @@
 .Dossier {
-    min-height: 0;
+  min-height: 0;
 
-    border: 3px solid var(--Border);
-    border-radius: 10px;
-    overflow: hidden;
+  border: 3px solid var(--Border);
+  border-radius: 10px;
+  overflow: hidden;
 
-    background: var(--PanelBg);
+  background: var(--PanelBg);
 }
 
 .Content {
-    width: 100%;
-    height: 100%;
-    min-height: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
 
-    display: grid;
-    grid-template-rows: auto minmax(0, 1fr);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
 
-    gap: 20px;
-    padding: 20px;
+  gap: 20px;
+  padding: 20px;
 }
-
 
 /* HEADER */
 
 .Header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    padding: 0 12px 14px;
+  padding: 0 12px 14px;
 
-    color: var(--Text);
-    border-bottom: 2px solid var(--Border);
+  color: var(--Text);
+  border-bottom: 2px solid var(--Border);
 }
 
 .HeaderInfo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 
 .HeaderInfo svg {
-    color: #6490bd;
+  color: #6490bd;
 }
 
 .CaseNumber {
-    color: var(--MutedText);
+  color: var(--MutedText);
 
-    font-size: 14px;
-    font-weight: 600;
+  font-size: 14px;
+  font-weight: 600;
 }
-
 
 /* MAIN */
 
 .Main {
-    min-height: 0;
+  min-height: 0;
 }
 
 .Empty {
-    width: 100%;
-    height: 100%;
-    min-height: 320px;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 
-    color: var(--MutedText);
+  color: var(--MutedText);
 }
 
 .Empty svg {
-    width: 54px;
-    height: 54px;
+  width: 54px;
+  height: 54px;
 
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 
-    color: var(--Accent);
-    stroke-width: 1.5;
+  color: var(--Accent);
+  stroke-width: 1.5;
 }
 
 .Empty span {
-    color: var(--Text);
+  color: var(--Text);
 
-    font-size: 20px;
-    font-weight: 700;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .Empty small {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .Profile {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .Tabs {
-    display: flex;
-    gap: 28px;
+  display: flex;
+  gap: 28px;
 
-    padding: 0 12px;
+  padding: 0 12px;
 
-    border-bottom: 2px solid var(--Border);
+  border-bottom: 2px solid var(--Border);
 }
 
 .Tab,
 .ActiveTab {
-    position: relative;
+  position: relative;
 
-    padding: 14px 4px;
+  padding: 14px 4px;
 
-    color: var(--MutedText);
-    background: transparent;
+  color: var(--MutedText);
+  background: transparent;
 
-    border: 0;
+  border: 0;
 
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 1px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .ActiveTab {
-    color: var(--Accent);
+  color: var(--Accent);
 }
 
 .ActiveTab::after {
-    content: "";
+  content: "";
 
-    position: absolute;
-    right: 0;
-    bottom: -2px;
-    left: 0;
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  left: 0;
 
-    height: 3px;
+  height: 3px;
 
-    background: var(--Accent);
-    border-radius: 3px 3px 0 0;
+  background: var(--Accent);
+  border-radius: 3px 3px 0 0;
 }
 
 .TabContent {
-    flex: 1;
-    min-height: 0;
+  flex: 1;
+  min-height: 0;
 
-    padding: 20px 12px;
+  padding: 20px 12px;
 }

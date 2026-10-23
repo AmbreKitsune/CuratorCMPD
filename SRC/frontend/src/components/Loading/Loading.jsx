@@ -1,33 +1,31 @@
-import { useEffect, useState } from "react"
-import styles from "./Loading.module.css"
+import { useEffect, useState } from "react";
+import styles from "./Loading.module.css";
 
 export default function LoadingDay({ onFinish }) {
-    const moons = ["🌑","🌒","🌓","🌔","🌕","🌖","🌗","🌘"];
-    const [index, setIndex] = useState(0);
-    
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setIndex(prev => (prev + 1) % moons.length);
-        }, 300);
+  const moons = ["🌑", "🌒", "🌓", "🌔", "🌕", "🌖", "🌗", "🌘"];
+  const [index, setIndex] = useState(0);
 
-        const timer = setTimeout(() => {
-            onFinish();
-        }, 5000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % moons.length);
+    }, 300);
 
-        return () => {
-            clearInterval(interval);
-            clearTimeout(timer);
-        };
-    }, []);
+    const timer = setTimeout(() => {
+      onFinish();
+    }, 5000);
 
-    return (
-        <div className={styles.main}>
-            <div className={styles.logo}>
-                <span>{moons[index]}</span>
-            </div>
-            <h1 className={styles.text}>
-                Загрузка нового дня
-            </h1>
-        </div>
-    )
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timer);
+    };
+  }, []);
+
+  return (
+    <div className={styles.main}>
+      <div className={styles.logo}>
+        <span>{moons[index]}</span>
+      </div>
+      <h1 className={styles.text}>Загрузка нового дня</h1>
+    </div>
+  );
 }

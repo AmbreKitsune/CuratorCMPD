@@ -1,96 +1,337 @@
-.main {
-    width: 100%;
-    height: 100vh;
-
-    padding: 0;
-    margin: 0;
-
-    display: grid;
-    grid-template-rows: 70px 1fr;
+.Main {
+  --Panel: #e3e9ee;
+  --PanelLight: #edf1f5;
+  --Border: #b8c4ce;
+  --Text: #1c2732;
+  --Muted: #647382;
+  --Blue: #3d7eae;
+  width: 100%;
+  height: 100vh;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: 90px minmax(0, 1fr);
+  color: var(--Text);
 }
 
-.shift {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.Content {
+  overflow-y: auto;
+  min-height: 0;
+  padding: 30px 34px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
-.shift span {
-    letter-spacing: 1px;
-    text-transform: uppercase;
+.Metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
 }
 
-.shiftStatus,
-.shiftTimer {
-    display: flex;
-    align-items: center;
+.Metric,
+.Panel,
+.ShiftPanel {
+  border: 1px solid var(--Border);
+  background: var(--Panel);
+  border-radius: 13px;
+  box-shadow: 0 2px 8px rgba(25, 45, 60, 0.035);
+}
+
+.Metric {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 21px 23px;
+  min-width: 0;
+}
+
+.MetricIcon {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  background: #d0e1ed;
+  color: var(--Blue);
+  border-radius: 9px;
+  margin-bottom: 18px;
+}
+
+.MetricLabel {
+  color: var(--Muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-weight: 700;
+}
+
+.MetricValue {
+  font-size: clamp(30px, 3.2vw, 42px);
+  line-height: 1.25;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  margin: 7px 0 4px;
+}
+
+.MetricHint {
+  color: var(--Muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.ShiftPanel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 30px;
+  padding: 27px 28px;
+  background: linear-gradient(125deg, #e1eaf1, #eaf0f4);
+}
+
+.ShiftInfo {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+.Eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--Blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+.ShiftTitleRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+.ShiftTitleRow h2 {
+  font-size: clamp(22px, 2.3vw, 30px);
+  line-height: 1.2;
+  font-weight: 750;
+}
+.ShiftInfo p {
+  color: var(--Muted);
+  font-size: 13px;
+}
+.Phase {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+.PhaseActive {
+  background: #d9eee1;
+  color: #246e47;
+}
+.PhaseWaiting {
+  background: #d9e1e8;
+  color: #536574;
+}
+.PhaseDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.ShiftFacts {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.ShiftFact {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 0 22px;
+  border-left: 1px solid var(--Border);
+  color: var(--Blue);
+}
+.ShiftFact:first-child {
+  border-left: none;
+}
+.ShiftFact > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.ShiftFact small {
+  color: var(--Muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+.ShiftFact strong {
+  color: var(--Text);
+  font-size: 23px;
+  line-height: 1.1;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.DetailsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+.Panel {
+  padding: 23px 25px 19px;
+  min-width: 0;
+}
+.PanelHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 23px;
+}
+.PanelTitle {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--Blue);
+}
+.PanelTitle h2 {
+  color: var(--Text);
+  font-size: 17px;
+  font-weight: 750;
+}
+.PanelTotal {
+  color: var(--Muted);
+  font-size: 12px;
+}
+.DistributionTrack {
+  display: flex;
+  height: 9px;
+  width: 100%;
+  background: #cdd6df;
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 19px;
+}
+.DistributionSegment {
+  height: 100%;
+  min-width: 0;
+}
+.DistributionSegment + .DistributionSegment {
+  border-left: 2px solid var(--Panel);
+}
+.ColorBlue {
+  background: #5794c1;
+}
+.ColorGreen {
+  background: #60a889;
+}
+.ColorAmber {
+  background: #d3a261;
+}
+.ColorSlate {
+  background: #96a8b9;
+}
+.Rows {
+  display: grid;
+}
+.DataRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid #cbd4db;
+}
+.DataRow:last-child {
+  border-bottom: 0;
+}
+.RowLabel {
+  color: var(--Muted);
+  font-size: 13px;
+}
+.RowValue {
+  color: var(--Text);
+  font-size: 14px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+.Footnote {
+  padding-bottom: 4px;
+  color: var(--Muted);
+  font-size: 12px;
+}
+.Error {
+  padding: 12px 15px;
+  background: #f6e4d9;
+  border: 1px solid #dba98b;
+  color: #8b4b2b;
+  border-radius: 9px;
+  font-size: 13px;
+}
+
+@media (max-width: 1280px) {
+  .ShiftPanel {
+    grid-template-columns: 1fr;
+  }
+  .ShiftFacts {
+    justify-content: space-between;
+    border-top: 1px solid var(--Border);
+    padding-top: 18px;
+  }
+  .ShiftFact:first-child {
+    padding-left: 0;
+  }
+}
+@media (max-width: 900px) {
+  .Metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .DetailsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .Main {
+    height: 100dvh;
+  }
+  .Content {
+    padding: 18px 14px 30px;
+    gap: 15px;
+  }
+  .Metrics {
     gap: 10px;
-}
-
-.shiftButton {
-    cursor: pointer;
-    min-width: 180px;
-    min-height: 30px;
-
-    color: #000;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
-
-    font-weight: 600;
-    border-radius: 20px;
-    background: #fff;
-
-    transition: opacity 0.3s ease;
-}
-
-.hide {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.status {
-    min-width: 150px;
-    min-height: 30px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-weight: 600;
-    border-radius: 20px;
-    background: #000;
-
-    transition: all 0.3s ease;
-}
-
-.work {
-    color: #22c55e;
-    border: 2px solid #22c55e;
-    box-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
-    animation: pop 0.2s ease;
-}
-
-.process {
-    color: #d7b072;
-    border: 2px solid #d7b072;
-    box-shadow: 0 0 12px rgba(202, 193, 69, 0.4);
-    animation: pop 0.2s ease;
-}
-
-.rest {
-    color: #ef4444;
-    border: 2px solid #ef4444;
-    animation: pop 0.2s ease;
-}
-
-@keyframes pop {
-    0% { transform: scale(0.3); }
-    100% { transform: scale(1); }
+  }
+  .Metric {
+    padding: 15px;
+  }
+  .MetricIcon {
+    margin-bottom: 12px;
+  }
+  .MetricHint {
+    font-size: 11px;
+  }
+  .ShiftPanel {
+    padding: 19px;
+  }
+  .ShiftFacts {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 18px 0;
+  }
+  .ShiftFact {
+    padding: 0 13px;
+  }
+  .ShiftFact:first-child {
+    padding-left: 0;
+  }
+  .ShiftFact strong {
+    font-size: 20px;
+  }
+  .Panel {
+    padding: 18px;
+  }
 }

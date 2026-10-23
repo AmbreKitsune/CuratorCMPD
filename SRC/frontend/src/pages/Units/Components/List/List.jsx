@@ -1,29 +1,28 @@
 import styles from "./List.module.css";
 
-
 import UnitCard from "../Card/Card";
 
+export default function UnitList({ units, vds }) {
+  return (
+    <div className={styles.List}>
+      <div className={styles.Header}>
+        <span>Экипажи · {units.length}</span>
+      </div>
 
-export default function UnitList({ units }) {
-    return (
-        <div className={styles.List}>
-            <div className={styles.Header}>
-                <span>Экипажи · {units.length}</span>
-            </div>
+      <div className={styles.Unit}>
+        {units.map((unit) => {
+          const unitVDS = vds.find((item) => item.id === unit.vds_id);
 
-            <div className={styles.Unit}>
-                {
-                    units.map((item) => (
-                        <UnitCard
-                            key={item.id}
-                            id={item.id}
-                            name={item.name}
-                            code={item.code}
-                        />
-                    ))
-                }
-            </div>
-
-        </div>
-    )
+          return (
+            <UnitCard
+              key={unit.id}
+              id={unit.id}
+              name={unit.name}
+              code={unitVDS?.code ?? "—"}
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
 }

@@ -1,7 +1,7 @@
 .git
 .gitignore
 
-frontend
+fronten
 
 **/__pycache__
 **/*.pyc

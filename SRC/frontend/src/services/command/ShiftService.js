@@ -1,7 +1,7 @@
-import { ApiClient } from "../ApiClient"
+import { ApiClient } from "../ApiClient";
 
 export const ShiftService = {
-    start() {
-        return ApiClient.post("/shift/start")
-    }
-}
+  start() {
+    return ApiClient.post("/shift/start");
+  },
+};
